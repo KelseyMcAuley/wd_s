@@ -1,0 +1,29 @@
+ul {
+	@apply mb-32 list-disc list-outside ml-16;
+}
+
+ol {
+	@apply mb-32 list-decimal list-outside ml-16;
+}
+
+ul,
+ol {
+	li {
+		@apply pb-16;
+		&:last-child {
+			@apply pb-0;
+		}
+		ul,
+		ol {
+			@apply pt-16 mb-0;
+		}
+	}
+}
+
+li li,
+li li li,
+li li li li,
+li li li li li,
+li li li li li li {
+	@apply ml-16;
+}

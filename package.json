@@ -28,6 +28,7 @@
 		"copy-webpack-plugin": "^11.0.0",
 		"cross-env": "^7.0.3",
 		"css-minimizer-webpack-plugin": "^4.0.0",
+		"dir-archiver": "^2.1.0",
 		"eslint-plugin-eslint-comments": "^3.2.0",
 		"eslint-webpack-plugin": "^3.2.0",
 		"imagemin-webpack-plugin": "^2.4.2",
@@ -80,6 +81,7 @@
 		"postinstall": "npx lefthook install",
 		"start": "cross-env NODE_ENV=development wp-scripts start",
 		"sync": "browser-sync start --https --proxy https://wdunderscores.test --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
-		"watch": "run-p start sync"
+		"watch": "run-p start sync",
+		"bundle": "dir-archiver --src . --dest ../wdunderscores.zip --exclude pa11y-ci-report lefthook.yml .vscode postcss.config.js webpack.config.js webpack.prod.js .DS_Store .browserlistrc .editorconfig .nvmrc .prettierignore .prettierrc.js .stylelintignore .markdownlintignore .markdownlint.json .eslintrc.js .eslintignore .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
 	}
 }
